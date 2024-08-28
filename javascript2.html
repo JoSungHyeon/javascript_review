@@ -1,0 +1,97 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+<head>
+<title>basic :: JavaScript Node Access</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;700&display=swap">
+<style>
+body {
+	margin: 20px;
+	padding: 20px;
+	line-height: 1;
+	font-family: "Open Sans", sans-serif;
+	font-size: 1em;
+	background-color: #555;
+	color: #000;
+}
+ul, li {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+li {
+	margin-top: 20px;
+}
+.title {
+	margin: 0;
+	padding: 0;
+	font-size: 1.5em;
+	font-weight: 300;
+}
+.container {
+	margin-top: 50px;
+}
+</style>
+</head>
+
+<body>
+<h1 class="title">basic :: JavaScript Node Access</h1>
+<div class="container">
+	<ul id="tutorial">
+		<li class="html">HTML</li>
+		<li class="css">CSS</li>
+		<li class="css3">CSS3</li>
+		<li class="javascript">JavaScript</li>
+		<li class="jquery">jQuery</li>
+		<li class="blank"></li>
+	</ul>
+	<p id="portfolio">portfolio</p>
+</div>
+
+<script>
+	console.log("Hello JavaScript");
+
+	// 1) 변수
+	// 선언 키워드 : let, var, const
+	// a란 단순한 메모리를 만듭니다.
+	// 우항 데이터는 Number, String, Bolean, undefined, null
+	let a=10;
+
+	// let 변수는 두번 선언할 수 없습니다.
+	// let a=20; // error
+	a=20;
+
+	// var 변수는 두번 선언할 수 있습니다.
+	// 웬만하면 이런식으로 작성하지 않는 것이 좋습니다.
+	var b=10;
+	var b=20;
+
+	// const 상수는 두 번 선언할 수 없고, 업데이트도 할 수 없는 정적 데이터입니다.
+	const c=10;
+	// const c=10; // error
+	// c=20; // error
+
+	// 2) 오브젝트
+	// 변수는 단일 데이터였던 것에 반해, 오브젝트는 여러개의 데이터를 갖고 있습니다.
+
+	// 2-1) Array : 배열
+	// 순서로 정렬된 데이터입니다.
+	// [] 대괄호가 배열 구문입니다.
+	let array=[0, "one", 2, "three"];
+
+	console.log(array)
+	
+	// 2-2) Object
+	// 라벨이 있는 리스트로 정렬됩니다.
+	// {} 중괄호가 오브젝트 구문입니다.
+	let obj={
+		name: "hongildong",
+		email: "hong@naver.com",
+		phone: "01012345678"
+	}
+
+	console.log(obj)
+</script>
+</body>
+</html>
