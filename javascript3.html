@@ -1,0 +1,160 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<title>basic :: JavaScript Variables</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;700&display=swap">
+<style>
+body, h1, h2, h3, h4, h5, h6, p, ul, ol, table, dl, dd {
+	margin: 0;
+	padding: 0;
+}
+h1 {
+	font-size: 16px;
+}
+a {
+	text-decoration: none;
+	color: #000;
+}
+ul, ol {
+	list-style: none;
+}
+img {
+	max-width: 100%;
+	vertical-align: top;
+	border: none;
+}
+body {
+	margin: 20px;
+	padding: 20px;
+	line-height: 1;
+	font-family: "Open Sans", sans-serif;
+	font-size: 1em;
+	background-color: lightblue;
+}
+.title {
+	margin: 0;
+	padding: 0;
+	font-size: 1.5em;
+	font-weight: 300;
+}
+.container {
+	margin-top: 50px;
+}
+</style>
+<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+<script>
+	// 변수와 데이터 유형을 구별해야 합니다.
+	// 
+	// 1) 변수
+	// let으로 선언하고, 우항에 표현식 혹은 데이터가 대입됩니다.
+	// 변수는 문자형 형태이기는 하지만 문자열 형식으로 표현되지 않습니다.
+
+	// 기초 데이터
+	// Number : 숫자 데이터입니다.
+	// String : 문자열 데이터는 큰 따옴표나 작은 따옴표입니다.
+	// Boolean : true, false 데이터입니다.
+	// undefined : 정의되지 않은 데이터입니다.
+	// null : 정의된 값을 초기화시키는 데이터입니다.
+	let title=0;
+	
+	title="title";
+</script>
+</head>
+
+<body>
+<h1 class="title">basic :: JavaScript Variables</h1>
+<div class="container">
+	<button class="calc">계산</button>
+	<input type="text" id="data">
+	<div class="result"></div>
+</div>
+
+<script>
+	// CONCEPT2 : 코드가 jQuery인지 JavaScript인지를 알아야 합니다.
+
+	// 프로그램에는 함수가 있고, 메서드가 있습니다.
+
+	// - 메서드 : 프로그램에 등록된 명령입니다.
+	//		 	 Jquery : click(), addClass(), removeClasee()
+
+	// - 함수 : 개발자가 등록한 명령입니다.
+	// 			jQuery 이벤트에도 함수가 쓰입니다.
+
+	// 1) 기본 JavaScript 함수
+	function myFn1() { // 선언식
+		console.log("myFn1");
+	}
+
+	myFn1(); // 호출식, click(), addClass()와 형식은 같습니다.
+
+	// 2) 대입함수
+	let myFn2=function(){ // 선언식
+		console.log("myFn2");
+	};
+
+	myFn2(); // 호출식
+
+	/* 
+	$(".calc").click(funcion(){
+		console.log("click");
+	});
+	 */
+
+	// $(".calc").click(myFn2);
+
+	//	CONCEPT3 : 논리식은 if나 while 문법으로 작성합니다.
+	// 점수를 입력하고 등급을 출력해 봅시다.
+
+	// if 논리
+	// 변수는 값에 대한 정보이기 때문에 변수를 갖고 논리식을 작성합니다.
+	// 1) if : 소괄호가 참이면 중괄호 프로그램이 실행됩니다.
+	// 2) if ~ else
+	// 3) if ~ else if ~ else
+
+	// 소괄호는 조건연산자를 통해서 값을 확인할 수 있습니다.
+	// 조건연산자 : > >= <= < == ===
+	/* let sum=81;
+
+	if(sum >= 90) {
+		console.log("A");
+	} else if(sum >= 80) {
+		console.log("B");
+	} else if(sum >= 70) {
+		console.log("C");
+	} else {
+		console.log("F");
+	} */
+
+	let sum=0; // 입력될 숫자 데이터를 넣을 변수입니다.
+	let grade=""; // 등급을 적을 변수입니다.
+
+	$(".calc").click(function(){
+		sum=$("#data").val(); // 버튼을 누르면 변수를 대입합니다.
+		
+		if(sum == "") {
+			console.log("입력되지 않았습니다.");	
+		}
+
+		if(sum >= 90) {
+			grade="A";
+		} else if(sum >= 80) {
+			grade="B";
+		} else if(sum >= 70) {
+			grade="C";
+		} else {
+			grade="F";
+		}
+
+		// grade 변수가 내포한 표현값입니다.
+		$(".result").text(grade);
+
+		// 'grade'는 문자 데이터입니다.
+		// $(".result").text("grade");
+		
+		$("#data").val(""); // 입력 데이터를 비웁니다.
+	});
+</script>
+</body>
+</html>
